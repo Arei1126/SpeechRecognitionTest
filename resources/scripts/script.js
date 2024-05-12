@@ -40,7 +40,6 @@ window.addEventListener("load", async ()=>{
 		textArea.insertBefore(node, PrevNode);
 		PrevNode = node;
 
-		if(voices.length !== 0){
 			const utter = new SpeechSynthesisUtterance();
 			utter.lang = LANG;
 			utter.pitch = 1.5;
@@ -51,8 +50,6 @@ window.addEventListener("load", async ()=>{
 			utter.rate
 			*/
 			Synth.speak(utter);
-
-		}
 
 	
 	});
