@@ -1,8 +1,16 @@
 `use strict`
+const LANG = "ja";
+
 window.addEventListener("load", async ()=>{
+
+	const Synth = window.speechSynthesis;
+
+	const voices = Synth.getVoices();
+	console.info(voices);
+
 	//const recognition = new SpeechRecognition();
 	const recognition = new webkitSpeechRecognition();
-	recognition.lang = "ja";
+	recognition.lang = LANG;
 	//recognition.continuous = true;
 	recognition.intermResult = true;
 
@@ -18,9 +26,9 @@ window.addEventListener("load", async ()=>{
 		console.info(results);
 
 		let node = document.createElement("p");
-		node.innerText =  results[0][results.length-1].transcript
+		const text =results[0][results.length-1].transcript;
 
-
+		node.innerText =  text;
 		
 		textArea.className = "";
 		window.requestAnimationFrame(() => {
@@ -28,20 +36,26 @@ window.addEventListener("load", async ()=>{
 				textArea.classList.add("prevLineAnim");
 			});
 		});
-		
-
-
-
 
 		textArea.insertBefore(node, PrevNode);
 		PrevNode = node;
-	});
+
+		if(voices.length !== 0){
+			const utter = new SpeechSynthesisUtterance();
+			utter.lang = LANG;
+			utter.pitch = 1.5;
+			utter.text = text;
+			/*
+			utter.volume
+			utter.voice
+			utter.rate
+			*/
+			Synth.speak(utter);
+
+		}
 
 	
-
-
-
-
+	});
 
 
 	recognition.addEventListener("error", ()=>{
