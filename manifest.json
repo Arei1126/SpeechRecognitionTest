@@ -1,0 +1,22 @@
+{
+	"name": "SpeechRecognitionTest",
+	"description":"SpeechRecognitionTest" ,
+	"short_name": "SpeechRecognitionTest",
+	"start_url" : "./index.html",
+	"id": "./index.html",
+	"scope": "./",
+	"display": "standalone",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"orientation": "any",
+	"icons": [
+		{
+			"src": "./resources/icons/icon.png",
+			"type": "image/png",
+			"sizes": "1024x1024"
+		}
+	],
+	"launch_handler": {
+		"client_mode": "auto"
+	}
+}
