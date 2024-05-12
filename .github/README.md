@@ -1,10 +1,11 @@
-# PWA Template
+# Speech Recogniton Test
 ## NAME
-PWA Template - The template for Progressive Web App
+Speech Recogniton Test - A test app for speech recogniton API 
 
 ## DESCRIPTION
 
 ## OPTION
 
 ## Web Demo
-[here](https://arei1126.github.io/)
+[here](https://arei1126.github.io/SpeechRecognitionTest/)
+
